@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 稳定信息入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #f9e3b8 0%, #fbd9a7 35%, #f8ce9c 70%, #efc18b 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .content-card {
+      max-width: 880px;
+      width: 100%;
+      background: #fffef8;
+      border-radius: 32px;
+      padding: 2.8rem 2.8rem 3.2rem;
+      box-shadow: 0 18px 36px rgba(160, 100, 40, 0.15),
+                  0 6px 14px rgba(120, 70, 20, 0.08);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .content-card:hover {
+      box-shadow: 0 22px 44px rgba(150, 90, 35, 0.18),
+                  0 8px 18px rgba(110, 60, 15, 0.10);
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #3c2a1a;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #7a5f42;
+      border-left: 4px solid #e5b484;
+      padding-left: 1rem;
+      margin-bottom: 2.2rem;
+      margin-top: 0.1rem;
+    }
+
+    .intro {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #4b3822;
+      margin-bottom: 2.2rem;
+      background: #fcf7ee;
+      padding: 1.2rem 1.6rem;
+      border-radius: 18px;
+    }
+
+    .paragraph {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #2f2218;
+      margin-bottom: 1.6rem;
+    }
+
+    .strong-link {
+      font-weight: 600;
+      color: #a56f3a;
+      text-decoration: none;
+      border-bottom: 2px solid #e7c29b;
+      transition: border-color 0.2s, color 0.2s;
+      padding-bottom: 1px;
+    }
+
+    .strong-link:hover {
+      color: #7a4d22;
+      border-bottom-color: #b28251;
+    }
+
+    .quote-box {
+      background: #f2e7d6;
+      padding: 1.2rem 1.8rem;
+      border-radius: 24px 8px 24px 8px;
+      margin: 2rem 0 1.8rem;
+      font-style: normal;
+      font-size: 1.03rem;
+      color: #3b2a1a;
+      border-left: 6px solid #dba875;
+      line-height: 1.65;
+    }
+
+    .quote-box span {
+      display: block;
+      margin-top: 0.6rem;
+      font-weight: 500;
+      color: #7f613f;
+      font-size: 0.9rem;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 2rem 0 1.4rem;
+    }
+
+    .feature-item {
+      flex: 1 1 180px;
+      background: #faf4ea;
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.98rem;
+      color: #382b1d;
+      box-shadow: 0 2px 6px rgba(180, 130, 70, 0.06);
+      transition: background 0.2s;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 600;
+      color: #8d6439;
+      margin-bottom: 0.25rem;
+    }
+
+    .access-hint {
+      background: #e8d7bf;
+      border-radius: 30px;
+      padding: 0.9rem 2rem;
+      display: inline-block;
+      font-size: 1rem;
+      color: #2e1f12;
+      margin: 1.2rem 0 0.5rem;
+      border: 1px solid #d6bc9b;
+      letter-spacing: 0.01em;
+    }
+
+    .faq-mini {
+      margin-top: 2.6rem;
+      border-top: 2px dashed #dcc6ab;
+      padding-top: 1.6rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 600;
+      color: #5b422c;
+      cursor: pointer;
+      padding: 0.4rem 0;
+      font-size: 1rem;
+    }
+
+    .faq-mini summary:hover {
+      color: #8a5f32;
+    }
+
+    .faq-mini p {
+      margin: 0.5rem 0 0.8rem 1.2rem;
+      color: #3e2e1d;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .footer-note {
+      margin-top: 2.6rem;
+      font-size: 0.9rem;
+      color: #7d6a53;
+      text-align: center;
+      border-top: 1px solid #e5d5c0;
+      padding-top: 1.4rem;
+    }
+
+    @media (max-width: 600px) {
+      .content-card {
+        padding: 2rem 1.4rem 2.4rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .intro {
+        font-size: 1.04rem;
+        padding: 1rem 1.2rem;
+      }
+
+      .paragraph {
+        font-size: 0.98rem;
+      }
+
+      .feature-grid {
+        gap: 0.8rem;
+      }
+
+      .quote-box {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="content-card">
+  <h1>世界杯 · 简明信息入口</h1>
+  <div class="subhead">稳定连接 · 赛事脉络与页面索引</div>
+
+  <p class="intro">
+    在赛事资讯高度碎片化的环境中，一个可靠的访问节点往往是获取全貌的前提。<br>
+    本文以简洁的索引方式，帮助你快速定位<a href="https://cn-ssl-fifa.com" class="strong-link">世界杯</a>相关的基础页面与信息模块，降低反复搜寻的成本。
+  </p>
+
+  <p class="paragraph">
+    四年一度的足球盛事吸引着全球数以亿计的观众，从预选赛分组到决赛阶段，每个环节都伴随大量数据更新。 
+    官方渠道与授权媒体通常承担主要信息分发，但不同平台的层级结构差异容易造成浏览盲区。
+    为此，我们梳理了从导航到内容正文的基本路径，让你在需要查阅赛程、历史数据或规则说明时，能更快找到对应的页面位置。
+  </p>
+
+  <p class="paragraph">
+    页面索引的核心在于「可预判」。当你需要回顾某届赛事的最佳射手、决赛比分或主办国场馆信息时，通常可以沿着赛会 → 年份 → 详细统计的逻辑深入。 
+    本入口页指向的正是这一类经过筛选的基础架构——不附加冗余交互，只提供清晰的跳转关系。 
+    所有链接均指向同一个稳定的信息节点：<a href="https://cn-ssl-fifa.com" class="strong-link">世界杯</a>，并从该节点延展出更细致的子页面。
+  </p>
+
+  <div class="quote-box">
+    “信息的可获得性比信息总量更重要。一个不变的入口，胜过十次临时搜索。”
+    <span>—— 页面设计笔记</span>
+  </div>
+
+  <p class="paragraph">
+    从使用场景来看，无论是快速查阅下一场比赛时间，还是对比不同年代的技术统计，一个保持稳定的入口都能节省重复定位的精力。 
+    我们不堆砌图表或动态模块，而是将注意力放在页面结构本身的说明性上：哪类内容放在哪个层级，什么链接代表什么功能。 
+    这种克制的组织方式，对日常浏览和长期收藏都更友好。
+  </p>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <strong>赛程与场馆</strong>
+      主页面下设赛事日历与举办地简介，便于横向对比时区与城市信息。
+    </div>
+    <div class="feature-item">
+      <strong>历史数据</strong>
+      历届冠军、最佳射手、小组赛积分等数据表，均通过统一入口链接整合。
+    </div>
+    <div class="feature-item">
+      <strong>索引结构</strong>
+      每个子页面保持相同的导航逻辑，降低重复学习成本。
+    </div>
+  </div>
+
+  <div class="access-hint">
+    ⚽ 直达基础页面 · <a href="https://cn-ssl-fifa.com" class="strong-link" style="border-bottom-width: 3px;">世界杯</a>
+  </div>
+
+  <div class="faq-mini">
+    <details>
+      <summary>❓ 页面更新频率如何？</summary>
+      <p>核心导航与链接结构保持长期不变；赛事期间如有子页面位置调整，会在此处标注提示。</p>
+    </details>
+    <details>
+      <summary>📌 是否包含实时比分或直播入口？</summary>
+      <p>本页以说明索引关系为主，不嵌入实时数据流。实时信息建议通过官方赛事页面或授权平台获取。</p>
+    </details>
+    <details>
+      <summary>🌐 移动端浏览体验是否有差异？</summary>
+      <p>页面采用自适应卡片布局，在手机与平板设备上均可正常阅读与跳转。链接文本可点击区域已适配触控。</p>
+    </details>
+  </div>
+
+  <div class="footer-note">
+    基于稳定的页面入口，减少信息噪音 · 文档版本 2025.04
+  </div>
+</div>
+
+</body>
+</html>
